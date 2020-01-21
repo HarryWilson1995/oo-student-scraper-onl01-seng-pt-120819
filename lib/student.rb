@@ -5,6 +5,7 @@ class Student
   @@all = []
 
   def initialize(student_hash)
+    #assigns values to students from create_from_collection initialize prompt 
     self.send("name=", student_hash[:name])
     self.send("location=", student_hash[:location])
     self.send("profile_url=", student_hash[:profile_url])
@@ -12,7 +13,7 @@ class Student
   end
 
   def self.create_from_collection(students_array)
-    #iterates over an array created by 
+    #iterates over an array created by scrape_index_page class method in scraper class
     students_array.each do |student_hash|
       Student.new(student_hash)
   end
